@@ -1,0 +1,304 @@
+/*
+GitHub Jekyll引擎使用的默认页面主题样式
+
+https://pages-themes.github.io/architect/
+
+使用:
+    按钮样式
+https://pages-themes.github.io/cayman/
+
+https://pages-themes.github.io/dinky/
+https://pages-themes.github.io/hacker/
+https://pages-themes.github.io/leap-day/
+https://pages-themes.github.io/merlot/
+
+使用:
+    背景图片: https://pages-themes.github.io/midnight/assets/images/nav-bg.gif
+https://pages-themes.github.io/midnight/
+
+使用:
+    .downloads li + li + li {}
+    兄弟选择器
+https://pages-themes.github.io/minimal/
+
+https://pages-themes.github.io/modernist/
+https://pages-themes.github.io/primer/
+https://pages-themes.github.io/slate/
+https://pages-themes.github.io/tactile/
+
+使用:
+    背景图片: https://pages-themes.github.io/time-machine/assets/images/pattern.png
+    折叠特效样式: border-color: black transparent transparent;
+https://pages-themes.github.io/time-machine/
+
+接下来的样式样式绝大部分是参考引用这些书写的:
+*/
+
+.body {
+    /*background-image: url(https://pages-themes.github.io/midnight/assets/images/nav-bg.gif);*/
+    /*background-repeat: repeat;*/
+}
+.Header {
+    display: block;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+
+    width: 100%;
+    height: auto;
+    text-align: center;
+
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+    .Header .section {
+        display: inline-block;
+        position: relative;
+        width: auto;
+        height: auto;
+        text-align: center;
+
+        background-image: url(https://pages-themes.github.io/midnight/assets/images/nav-bg.gif);
+        background-repeat: repeat;
+
+        -moz-border-radius: 0 0 5em 5em;
+        -webkit-border-radius: 0 0 5em 5em;
+        border-radius: 0 0 5em 5em;
+
+        margin: 0 0 .5em 0;
+        padding: .5em 2.6em;
+        /*box-shadow: 0px 0px .3em #000, 0 0 .2em #bab8b8 inset;*/
+        -webkit-box-shadow: 0px 0px .3em #000;
+        -moz-box-shadow: 0px 0px .3em #000;
+        -ms-box-shadow: 0px 0px .3em #000;
+        -o-box-shadow: 0px 0px .3em #000;
+        box-shadow: 0px 0px .3em #000;
+    }
+        .section .a {}
+        .Header .box {
+            display: inline-block;
+            overflow: hidden;
+            position: relative;
+            float: left;
+            width: auto;
+            height: 2em;
+            text-align: center;
+        }
+            .Header .box + .box {
+                margin-left: 1em;
+            }
+            .Header .box .span {
+                display: inline;
+                color: #fff;
+                font-size: 1.3em;
+                height: 1.538em;
+                line-height: 1.538em;
+            }
+        .Header .avatar {
+            display: block;
+            width: 2em;
+            height: 2em;
+            -webkit-box-shadow: 0 0 3px #5f5f5f, 0 0 4px #fff inset;
+            -moz-box-shadow: 0 0 3px #5f5f5f, 0 0 4px #fff inset;
+            -ms-box-shadow: 0 0 3px #5f5f5f, 0 0 4px #fff inset;
+            -o-box-shadow: 0 0 3px #5f5f5f, 0 0 4px #fff inset;
+            box-shadow: 0 0 3px #5f5f5f, 0 0 4px #fff inset;
+
+            -moz-border-radius: .3em;
+            -webkit-border-radius: .3em;
+            border-radius: .3em;
+        }
+            .Header .avatar .img {
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+        .Header .owner {}
+            .Header .owner .a {}
+            .Header .owner .span {}
+        .Header .repo {}
+            .Header .repo .span {}
+        .Header .description {
+            display: none;
+        }
+            .Header .description .span {}
+        .Header .buttons {
+            display: none;
+            border: 1px solid #666;
+
+            -moz-border-radius: .5em;
+            -webkit-border-radius: .5em;
+            border-radius: .5em;
+        }
+            .Header .btn {
+                display: block;
+                width: auto;
+                height: 100%;
+                float: left;
+                padding: 0 .7em;
+            }
+            .Header .btn + .btn {
+                border-left: 1px solid #666;
+            }
+                .Header .btn .a {}
+                .Header .btn .span {
+                    color: #777;
+                }
+
+.Dialog {
+    display: none;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+
+    width: 100%;
+    height: 100%;
+}
+    .Dialog.Show {
+        display: block;
+    }
+    .Dialog:before {
+        content: "";
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 9;
+
+        width: 100%;
+        height: 100%;
+
+        filter: alpha(opacity=70);
+        -moz-opacity: .7;
+        opacity: .7;
+
+        background-color: #000;
+    }
+    .Dialog .Close {
+        overflow: hidden;
+        position: absolute;
+        top: 1em;
+        right: 1em;
+        z-index: 10;
+
+        width: 3em;
+        height: 3em;
+
+        background-image: url("https://ytsimg.gitee.io/blog/icon/x_black.png");
+        background-image: url("https://ytsimg.gitee.io/blog/icon/x_white.png");
+        background-size: 1.8em;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+
+        -webkit-transition: all .2s;
+        -moz-transition: all .2s;
+        -o-transition: all .2s;
+        transition: all .2s;
+    }
+        .Dialog .Close:hover {
+            -moz-box-shadow: 0px 0px .4em #000;
+            box-shadow: 0px 0px .4em #000;
+        }
+    .Dialog .Box {
+        display: block;
+        overflow: hidden;
+        position: relative;
+        z-index: 11;
+
+        width: auto;
+        float: left;
+        padding: 2em 3em;
+        padding-top: 2.6em;
+
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+
+        background-color: #000;
+
+        -moz-border-radius: .8em;
+        -webkit-border-radius: .8em;
+        border-radius: .8em;
+
+        -moz-box-shadow: 0px 0px .4em #000;
+        box-shadow: 0px 0px .4em #000;
+    }
+    .Dialog .icon {
+        display: block;
+        width: 3em;
+        height: 3em;
+        background-size: 100%;
+        margin: 0 auto;
+    }
+    .Dialog .prompt {
+        font-size: 1.2em;
+        display: block;
+        width: 100%;
+        height: auto;
+        padding: 1em .5em;
+        padding-bottom: 0;
+        text-align: center;
+    }
+        .Dialog .prompt .span {
+            font-weight: bold;
+            color: #a1a1a1;
+            letter-spacing: .2em;
+        }
+
+.Content {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+
+    margin-top: 3em;
+}
+    .Content .IMGLibrary {
+        display: block;
+        overflow: hidden;
+        position: relative;
+        padding-bottom: 10px;
+    }
+        .Content .IMGLibrary .li {
+            display: block;
+            overflow: hidden;
+            position: relative;
+            float: left;
+            width: auto;
+            height: 8em;
+
+            margin-top: 10px;
+            margin-left: 10px;
+
+            -webkit-box-shadow: 0px 0px 4px #000, 0 0 2px #bab8b8 inset;
+            -moz-box-shadow: 0px 0px 4px #000, 0 0 2px #bab8b8 inset;
+            -ms-box-shadow: 0px 0px 4px #000, 0 0 2px #bab8b8 inset;
+            -o-box-shadow: 0px 0px 4px #000, 0 0 2px #bab8b8 inset;
+            box-shadow: 0px 0px 4px #000, 0 0 2px #bab8b8 inset;
+        }
+            .Content .IMGLibrary .li .img {
+                display: block;
+                overflow: hidden;
+                position: relative;
+                width: auto;
+                height: 100%;
+            }
